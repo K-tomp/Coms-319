@@ -91,13 +91,14 @@
   -webkit-backdrop-filter: blur(14px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: color 0.2s;
+  transition: color 0.2s,background-color .2s;
   overflow: hidden;
   color: rgb(86, 85, 85);
 }
 
 .cardText:hover {
   color: rgb(0, 0, 0);
+   background-color: white;
 }
 .cardBody {
   --bs-card-spacer-y: 1rem;
@@ -106,7 +107,10 @@
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
   cursor: pointer;
+  transition: background-color 2s;
 }
+
+
 
     </style>
   </head>
