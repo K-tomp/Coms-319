@@ -18,7 +18,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="custom.css" />
+ 
 
     <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -74,6 +74,40 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .cardBackground {
+  background: rgb(12, 160, 181);
+  background: linear-gradient(
+    121deg,
+    rgb(203, 216, 218) 0%,
+    rgb(204, 197, 209) 39%,
+    rgb(192, 173, 189) 100%
+  );
+}
+
+.cardText {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: color 0.2s;
+  overflow: hidden;
+  color: rgb(86, 85, 85);
+}
+
+.cardText:hover {
+  color: rgb(0, 0, 0);
+}
+.cardBody {
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+  cursor: pointer;
+}
+
     </style>
   </head>
 
