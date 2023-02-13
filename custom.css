@@ -2,9 +2,9 @@
   background: rgb(12, 160, 181);
   background: linear-gradient(
     121deg,
-    rgba(12, 160, 181, 1) 0%,
-    rgba(160, 196, 242, 1) 39%,
-    rgba(68, 99, 212, 1) 100%
+    rgb(108, 197, 207) 0%,
+    rgb(146, 101, 180) 39%,
+    rgb(233, 135, 216) 100%
   );
 }
 
@@ -13,14 +13,15 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: color 0.2s;
+  overflow: hidden;
+  color: rgb(86, 85, 85);
 }
 
 .cardText:hover {
-  color: rgb(225, 13, 13);
+  color: rgb(0, 0, 0);
 }
 .cardBody {
   --bs-card-spacer-y: 1rem;
@@ -28,4 +29,5 @@
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  cursor: pointer;
 }
