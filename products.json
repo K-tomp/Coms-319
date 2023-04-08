@@ -1,24 +1,6 @@
 {
   "products": [
     {
-      "src": "images/DiningTable.jpg",
-      "productName": "DiningTable",
-      "price": "$625.00",
-      "text": "Whether you have a large family or you just enjoy entertaining guests this dining table will be sure to fit in your home. The table is 60\" in length but also includes an 18\" table leaf so you can expand your table to 78 to accommodate more guests or create table surface for serving food. The pedestals of the table contain a unique x motif that gives this dining table personality. Constructed of hardwood solids and primavera veneers with a Merlot Cherry wood finish this timeless style is sure to last in your home."
-    },
-    {
-      "src": "images/DiningTable2.jpg",
-      "productName": "Selva Dining Table",
-      "price": "$700.00",
-      "text": "Part of the Tzsar collection, this next table comes from the Italian furniture company Selva. Its remarkable style is based on the modern design and use of quality materials. The table has a frame veneered in cherry and tempered glass tabletop. Having a transparent surface accentuates the beautifully curved stand underneath."
-    },
-    {
-      "src": "images/DiningTable3.jpg",
-      "productName": "The Big Sur",
-      "price": "$900.00",
-      "text": "The Big Sur Dining Table from Crate & Barrel seems to be able to bring a small piece of nature and a calming effect in the dining room. The contemporary combination of rustic natural wood and bold, apparently heavy shape is the perfect mix for those who wish to have an imposing-looking dining table in their home."
-    },
-    {
       "src": "images/DiningTable4.jpg",
       "productName": "The InducTable",
       "price": "$3000.00",
@@ -35,9 +17,7 @@
       "productName": "The Vita Dining Table",
       "price": "$500.00",
       "text": "Designer Thos Moser wanted this table to be an amazing design that would create the perfect dining experience. Having an eight-foot-long cherry veneer tabletop and a bent laminated base, the Vita Dining Table expresses the designer`s wish to build a perfectly balanced product. It expands with the help of a hidden scissor-like portion to make room for more guests so that everyone can enjoy the food on the table in comfort."
-    }
-  ],
-  "products2": [
+    },
     {
       "src": "images/Sofa1.jpg",
       "productName": "TRACK ARM SOFA",
@@ -51,10 +31,28 @@
       "text": "Pillow back sofas come outfitted with an assortment of large pillows rather than fitted cushions. Generally these pillows are not attached to the back of the couch and can be arranged however you like."
     },
     {
-      "src": "images/Sofa2.jpg",
+      "src": "images/Sofa3.jpg",
       "productName": "TOGETHER SOFA",
       "price": "$10000.00",
       "text": "Pillow back sofas come outfitted with an assortment of large pillows rather than fitted cushions. The difference is you get a bunch of them together"
+    },
+    {
+      "src": "images/DiningTable.jpg",
+      "productName": "DiningTable",
+      "price": "$625.00",
+      "text": "Whether you have a large family or you just enjoy entertaining guests this dining table will be sure to fit in your home. The table is 60\" in length but also includes an 18\" table leaf so you can expand your table to 78 to accommodate more guests or create table surface for serving food. The pedestals of the table contain a unique x motif that gives this dining table personality. Constructed of hardwood solids and primavera veneers with a Merlot Cherry wood finish this timeless style is sure to last in your home."
+    },
+    {
+      "src": "images/DiningTable2.jpg",
+      "productName": "Selva Dining Table",
+      "price": "$700.00",
+      "text": "Part of the Tzsar collection, this next table comes from the Italian furniture company Selva. Its remarkable style is based on the modern design and use of quality materials. The table has a frame veneered in cherry and tempered glass tabletop. Having a transparent surface accentuates the beautifully curved stand underneath."
+    },
+    {
+      "src": "images/DiningTable3.jpg",
+      "productName": "The Big Sur",
+      "price": "$900.00",
+      "text": "The Big Sur Dining Table from Crate & Barrel seems to be able to bring a small piece of nature and a calming effect in the dining room. The contemporary combination of rustic natural wood and bold, apparently heavy shape is the perfect mix for those who wish to have an imposing-looking dining table in their home."
     }
   ]
 }

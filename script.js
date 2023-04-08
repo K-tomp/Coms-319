@@ -1,59 +1,80 @@
-let qtyButtons = document.getElementsByClassName("btn btn-sm btn-outline-secondary");
-let qtyBoxes = document.getElementsByClassName("number");
+function createCards(data) {
+  let mainContainer = document.getElementById("container");
+  for (let card of data.products) {
+    let div2 = document.createElement("div");
+    div2.className = "col";
+    let div3 = document.createElement("div");
+    div3.className = "shadow-sm cardText";
+    let div4 = document.createElement("img");
+    div4.className = "bd-placeholder-img card-img-top";
+    div4.src = `${card.src}`;
+    let div5 = document.createElement("div");
+    div5.className = "cardBody";
+    let div6 = document.createElement("strong");
+    div6.innerHTML = `${card.productName}`;
+    let div7 = document.createElement("p");
+    div7.innerHTML = `${card.text}`;
+    let div8 = document.createElement("div");
+    div8.className = "d-flex justify-content-between align-items-end";
 
-for (let i = 0; i < qtyBoxes.length; i++) {
-    //plus button
-    qtyButtons[i * 2].addEventListener(onclick, function() {
-        qtyBoxes[i].value++;
-    })
+    let btnGroup = document.createElement("div");
+    btnGroup.className = "btn-group";
+
+    let Price = document.createElement("small");
+    Price.className = "text-muted";
+    Price.innerHTML = `${card.price} `;
+
+    let qtyInput = document.createElement("input");
+    qtyInput.type = "number";
+    qtyInput.className = "form-control form-control-light text-bg-light";
+    qtyInput.value = "0";
+
+    let plusButton = document.createElement("button");
+    plusButton.className = "btn btn-sm btn-outline-secondary";
+    plusButton.type = "button";
+    plusButton.innerText = "+";
+    plusButton.addEventListener("click", function () {
+      qtyInput.value++;
+    });
+
+    let minusButton = document.createElement("button");
+    minusButton.className = "btn btn-sm btn-outline-secondary";
+    minusButton.type = "button";
+    minusButton.innerText = "-";
+    minusButton.addEventListener("click", function () {
+      if (qtyInput.value > 0) {
+        qtyInput.value--;
+      }
+    });
+
+    btnGroup.appendChild(qtyInput);
+    btnGroup.appendChild(plusButton);
+    btnGroup.appendChild(minusButton);
+
+    div8.appendChild(btnGroup);
+
+    div8.appendChild(Price);
+    div5.appendChild(div6);
+    div5.appendChild(div7);
+    div5.appendChild(div8);
+    div3.appendChild(div4);
+    div3.appendChild(div5);
+    div2.appendChild(div3);
+    mainContainer.appendChild(div2);
+  }
 }
 
-function createCards(data) {
-    let mainContainer = document.getElementById("container");
-    for (let card of data.products) {
-      let div2 = document.createElement("div");
-      div2.className = "col";
-      let div3 = document.createElement("div");
-      div3.className = "shadow-sm cardText";
-      let div4 = document.createElement("img");
-      div4.className = "bd-placeholder-img card-img-top";
-      div4.src = `${card.src}`;
-      let div5 = document.createElement("div");
-      div5.className = "cardBody";
-      let div6 = document.createElement("strong");
-      div6.innerHTML = `${card.productName}`;
-      let div7 = document.createElement("p");
-      div7.innerHTML = `${card.text}`;
-      let div8 = document.createElement("div");
-      div8.className = "d-flex justify-content-between align-items-center";
-      let div9 = document.createElement("small");
-      div9.className = "text-muted";
-      div9.innerHTML = `${card.price} `;
-      let div10 = document.createElement("input");
-      div10.type = "number";
-      div10.className = "form-control form-control-dark text-bg-light";
-      div9.appendChild(div10);
-      div8.appendChild(div9);
-      div5.appendChild(div6);
-      div5.appendChild(div7);
-      div5.appendChild(div8);
-      div3.appendChild(div4);
-      div3.appendChild(div5);
-      div2.appendChild(div3);
-      mainContainer.appendChild(div2);
-    }
-  }
-  
-  fetch("products.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      createCards(data);
-    })
-    .catch(function (err) {
-      console.log("error:" + err);
-    });
+fetch("products.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    createCards(data);
+    //var productInfo = data;
+  })
+  .catch(function (err) {
+    console.log("error:" + err);
+  });
 
 //        <div class="col">
 // <div class="card shadow-sm">
@@ -67,8 +88,51 @@ function createCards(data) {
 //       <button type="button" class="btn btn-sm btn-outline-secondary">-</button>
 //     </div>
 //     <small class="text-body-emphasis">$19.99</small>
-    
+
 //   </div>
 // </div>
 // </div>
 // </div>
+
+window.onload = init;
+
+function init() {
+  let btnCheckOut = document.getElementById("checkOut");
+  if (btnCheckOut != null) {
+    btnCheckOut.addEventListener("click", checkOut);
+  } else {
+    console.error("no button found");
+  }
+}
+
+function checkOut() {
+  console.log("Checking out...");
+  let qtyInputs = document.getElementsByClassName("form-control form-control-light text-bg-light");
+  let prodImages = document.getElementsByClassName("bd-placeholder-img card-img-top");
+  let prodPrices = document.getElementsByClassName("text-muted");
+  let prodNames = document.getElementsByTagName("strong");
+  var homePage = document.getElementById("main");
+  var cart = [];
+
+  //create shopping cart
+  for (let i = 0; i < qtyInputs.length; i++) {
+    if (qtyInputs[i].value > 0) {
+      let item = {name:`${prodNames[i].innerText}`, image:`${prodImages[i].src}`, price:`${prodPrices[i].innerText}`, quantity:`${qtyInputs[i].value}`};
+      cart.push(item);
+    }
+  }
+
+  let current = qtyInputs[0].parentElement.parentElement; //div8
+  switchPage(cart[0]);
+
+}
+
+function switchPage(div) {
+  let main = document.getElementById("main");
+  let old = main;
+  let newPage = document.createElement("image"); //for testing
+  newPage.src = div.image;
+
+  main.innerHTML = newPage;
+  return old;
+}
